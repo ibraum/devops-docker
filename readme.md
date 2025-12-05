@@ -21,3 +21,16 @@ docker build -t mynodeapp .
 ```bash
 docker run mynodeapp
 ```
+### step 5 : Run in with -it flags and shell access
+```bash
+docker run -it mynodeapp sh
+```
+
+
+---
+
+### Create a non root user and run the container with that user
+```Dockerfile
+RUN addgroup devgroup && adduser -S -G devgroup devuser
+USER devuser
+```
